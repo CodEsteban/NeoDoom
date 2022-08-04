@@ -1,17 +1,18 @@
 # NeoDoom
 
 ## Installation
-## 1
+### -- 1
 Clone this repository to ~/.config/nvim/
 ```
 git clone https://github.com/CodEsteban/NeoDoom ~/.config/nvim
 ```
-if not empty, remove it or make a backup
+if not empty, remove it or make a backup.
 
-## 2
+   
+### -- 2
 Launch neovim it will error out, hit enter.  (TO FIX)
 
-## 3
+### -- 3
 then it will prompt you to remove a directory, hit "n" then hit enter
 it will procced to install plugins, 
 ### make sure everything gets installed.
