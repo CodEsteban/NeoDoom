@@ -32,17 +32,29 @@ M.move_this_file = function()
 	end
 end
 wk.register({
-  ["1"] = {"<cmd>lua require('harpoon.ui').nav_file(1)<cr>","File 1" },
-  ["2"] = {"<cmd>lua require('harpoon.ui').nav_file(2)<cr>","File 2" },
-  ["3"] = {"<cmd>lua require('harpoon.ui').nav_file(3)<cr>","File 3" },
-  ["4"] = {"<cmd>lua require('harpoon.ui').nav_file(4)<cr>","File 4" },
+  ["1"] = {"<cmd>lua require('harpoon.ui').nav_file(1)<cr>","which_key_ignore" },
+  ["2"] = {"<cmd>lua require('harpoon.ui').nav_file(2)<cr>","which_key_ignore" },
+  ["3"] = {"<cmd>lua require('harpoon.ui').nav_file(3)<cr>","which_key_ignore" },
+  ["4"] = {"<cmd>lua require('harpoon.ui').nav_file(4)<cr>","which_key_ignore" },
+  ["5"] = {"<cmd>lua require('harpoon.ui').nav_file(5)<cr>","which_key_ignore" },
+  ["6"] = {"<cmd>lua require('harpoon.ui').nav_file(6)<cr>","which_key_ignore" },
+  ["7"] = {"<cmd>lua require('harpoon.ui').nav_file(7)<cr>","which_key_ignore" },
+  ["8"] = {"<cmd>lua require('harpoon.ui').nav_file(8)<cr>","which_key_ignore" },
+  ["9"] = {"<cmd>lua require('harpoon.ui').nav_file(9)<cr>","which_key_ignore" },
+  ["0"] = {"<cmd>lua require('harpoon.ui').nav_file(0)<cr>","which_key_ignore" },
+  ["#"] = {"<cmd>echo 'replace the # with harpoons file number'<cr>","Go to file #" },
   w = {
 	  name = "Window",
 	  q = {"<cmd> q <cr>", "Quit"},
-	  j = {"<cmd> wincmd j<cr>", "Go down"},
-	  k = {"<cmd> wincmd k<cr>", "Go up"},
-	  h = {"<cmd> wincmd h<cr>", "Go left"},
-	  l = {"<cmd> wincmd l<cr>", "Go right"},
+	  ["?"] = {"hjkl/HJKL(go/move) window"},
+	  h = {"<cmd> wincmd h<cr>", "which_key_ignore"},
+	  j = {"<cmd> wincmd j<cr>", "which_key_ignore"},
+	  k = {"<cmd> wincmd k<cr>", "which_key_ignore"},
+	  l = {"<cmd> wincmd l<cr>", "which_key_ignore"},
+	  H = {"<cmd> wincmd H<cr>", "which_key_ignore"},
+	  J = {"<cmd> wincmd J<cr>", "which_key_ignore"},
+	  K = {"<cmd> wincmd K<cr>", "which_key_ignore"},
+	  L = {"<cmd> wincmd L<cr>", "which_key_ignore"},
 	  Q = {"<cmd> q! <cr>", "Quit once for all!"},
 	  n = {name = "New",
 		l = {"<cmd> vs <cr>", "Left"},
@@ -51,12 +63,15 @@ wk.register({
   },
   p = {
 	  name = "Project",
-	  m = {mark.add_file, "mark file"},
+	  m = {mark.add_file, "Mark file"},
 	  e = {"<cmd> TroubleToggle<cr>", "Errors"}
   },
   e = {
 	  name = "Editor",
 	  r = {"<cmd>so ~/.config/nvim/init.lua<cr>","Reload config"},
+  },
+  o = {
+	"<cmd>ToggleTerm<cr>", "Open Terminal"
   },
   f = {
     name = "File",

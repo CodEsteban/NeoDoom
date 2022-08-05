@@ -1,0 +1,33 @@
+local db = require('dashboard')
+db.custom_header = {
+[[         _________                  ]],
+[[        /         \                 ]],
+[[       |           |                ]],
+[[       |  _    _   |                ]],
+[[       |           |           .'.  ]],
+[[        \         /    _      /_ _\ ]],
+[[        /         |   '. \   ___|___]],
+[[       -|          \   / |---\_____/]],
+[[  _---' /   __      |_/  /          ]],
+[[.- - -| |  | .\ / \     /           ]],
+[[      |.|  -  |/   '---             ]],
+[[     |/ /  |  \.                    ]],
+[[    '   \ /                         ]],
+[[         /                          ]],
+[[        '                           ]],
+}
+db.custom_center = {
+      {icon = [[ *   ]],
+      desc = 'Show marked files              ',
+      shortcut = 'SPC SPC',
+      },
+      {icon = [[<-   ]],
+      desc = 'Recently opened files          ',
+      shortcut = 'SPC f r'},
+      {icon = [[..?  ]],
+      desc = 'Find file                      ',
+      shortcut = 'SPC f f'},
+      {icon = [[Hah  ]],
+      desc = 'Open config                    ',
+      shortcut = 'SPC f f'},
+}

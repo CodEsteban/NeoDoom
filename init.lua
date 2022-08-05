@@ -1,15 +1,9 @@
 require('plugs')
 require('plugins/gruvbox')
+require('plugins/dash')
 require('core/keymaps')
 require("harpoon").setup()
-require("mason").setup()
-require("mason-lspconfig").setup({
-    ensure_installed = { "rust_analyzer" }
-})
-require'lspconfig'.sumneko_lua.setup{}
-require'lspconfig'.rust_analyzer.setup{}
 require('core/general')
-require('plugins/nest')
 require('plugins/which-key')
 require('trouble').setup()
 local tele = require("telescope")

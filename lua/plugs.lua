@@ -6,9 +6,7 @@ if fn.empty(fn.glob(install_path)) > 0 then
 end
 
 return require('packer').startup(function(use)
-	use {"williamboman/mason.nvim",
-	    "neovim/nvim-lspconfig",
-	    "williamboman/mason-lspconfig.nvim",
+	use {
 	    "LionC/nest.nvim",
 	    "ellisonleao/gruvbox.nvim",
 	    "folke/trouble.nvim",
@@ -19,6 +17,13 @@ return require('packer').startup(function(use)
 	    'nvim-lua/plenary.nvim',
 	    "nvim-telescope/telescope-file-browser.nvim" 
     }
+    use {
+	    'neoclide/coc.nvim', branch = 'release'
+    }
+use {'glepnir/dashboard-nvim'}
+    use {"akinsho/toggleterm.nvim", tag = 'v2.*', config = function()
+  require("toggleterm").setup()
+end}
   if packer_bootstrap then
     require('packer').sync()
   end
