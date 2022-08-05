@@ -11,6 +11,8 @@ return require('packer').startup(function(use)
 	    "williamboman/mason-lspconfig.nvim",
 	    "LionC/nest.nvim",
 	    "ellisonleao/gruvbox.nvim",
+	    "folke/trouble.nvim",
+	    'kyazdani42/nvim-web-devicons',
 	    "folke/which-key.nvim" ,
 	    'ThePrimeagen/harpoon',
 	    'nvim-telescope/telescope.nvim', tag = '0.1.0',

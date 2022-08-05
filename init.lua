@@ -11,6 +11,7 @@ require'lspconfig'.rust_analyzer.setup{}
 require('core/general')
 require('plugins/nest')
 require('plugins/which-key')
+require('trouble').setup()
 local tele = require("telescope")
 local fb_actions = tele.extensions.file_browser.actions
 tele.load_extension "file_browser"
@@ -37,15 +38,6 @@ require('telescope').setup {
   extensions = {
     file_browser = {
       hijack_netrw = true,
-      mappings = {
-        ["i"] = {
-        },
-        ["n"] = {
-		l = tele_actions.select_default,
-		h = fb_actions.goto_parent_dir,
-		g = false
-        },
-      },
     },
   },
 }

@@ -49,13 +49,10 @@ wk.register({
 		j = {"<cmd> sp <cr>","Down"},
 	  }
   },
-  b = {
-	  name = "Buffer",
-	  f = {tlscope.buffers,"Find Buffer"}
-  },
   p = {
 	  name = "Project",
-	  a = {mark.add_file, "Add file"},
+	  m = {mark.add_file, "mark file"},
+	  e = {"<cmd> TroubleToggle<cr>", "Errors"}
   },
   e = {
 	  name = "Editor",
@@ -64,7 +61,7 @@ wk.register({
   f = {
     name = "File",
 
-    f = { "<cmd>Telescope find_files<cr>", "Find file" }, 
+    f = { "<cmd>Telescope find_files<cr>", "Find file" },
     r = { "<cmd>Telescope oldfiles<cr>", "Open recent file" },
     m = {M.move_this_file, "Move this file"},
     n = { M.prompt_new_file,"New file" },
@@ -72,6 +69,7 @@ wk.register({
     s = { "<cmd>w<cr>", "Save file"}
   },
   [" "] = {ui.toggle_quick_menu, "Project Files"},
-  ["."] = {"<cmd>Telescope file_browser<cr>", "Find Here" },
+  ["."] = {"<cmd>Telescope file_browser path=%:p:h <cr>", "Find Here" },
+  [","] = {tlscope.buffers,"Buffer"}
 }, { prefix = "<leader>" } )
 
