@@ -2,7 +2,14 @@ require('plugs')
 require('plugins/gruvbox')
 require('plugins/dash')
 require('core/keymaps')
-require("harpoon").setup()
+require("mason").setup()
+require("harpoon").setup(
+{
+    menu = {
+        width = 40 
+    }
+}
+)
 require('core/general')
 require('plugins/which-key')
 require('trouble').setup()
@@ -35,3 +42,5 @@ require('telescope').setup {
     },
   },
 }
+require("plugins/lsp")
+require'nvim-treesitter'.setup()

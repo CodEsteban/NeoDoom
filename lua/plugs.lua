@@ -7,7 +7,7 @@ end
 
 return require('packer').startup(function(use)
 	use {
-	    "LionC/nest.nvim",
+	    "wbthomason/packer.nvim",
 	    "ellisonleao/gruvbox.nvim",
 	    "folke/trouble.nvim",
 	    'kyazdani42/nvim-web-devicons',
@@ -15,11 +15,14 @@ return require('packer').startup(function(use)
 	    'ThePrimeagen/harpoon',
 	    'nvim-telescope/telescope.nvim', tag = '0.1.0',
 	    'nvim-lua/plenary.nvim',
-	    "nvim-telescope/telescope-file-browser.nvim" 
+	    "nvim-telescope/telescope-file-browser.nvim",
+	    'neovim/nvim-lspconfig'
     }
-    use {
-	    'neoclide/coc.nvim', branch = 'release'
-    }
+    use { "williamboman/mason.nvim" }
+    use { 'nvim-treesitter/nvim-treesitter'}
+    --   use {
+    --      'neoclide/coc.nvim', branch = 'release'
+    --   }
 use {'glepnir/dashboard-nvim'}
     use {"akinsho/toggleterm.nvim", tag = 'v2.*', config = function()
   require("toggleterm").setup()
