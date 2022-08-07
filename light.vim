@@ -79,8 +79,8 @@ call s:hi ("Search",		"",					s:base6,		"none")
 call s:hi ("SpellBad",		s:white,			s:diff_delete,	"none")
 call s:hi ("SpellRare",		s:diff_change_dark,	s:diff_change,	"none")
 call s:hi ("Statement",		s:orange_text,		s:orange_bg,	"none")
+call s:hi ("StatusLineNC",	s:base1,			'#DDE4F2',		"none")
 call s:hi ("StatusLine",	s:base7,			s:base1,		"bold")
-call s:hi ("StatusLineNC",	s:base1,			s:base3,		"none")
 call s:hi ("String",		s:green_text,		s:green_bg,		"none")
 call s:hi ("Type",			s:purple_text,		s:purple_bg,	"none")
 call s:hi ("Underlined",	"",					"",				"underline")
@@ -155,8 +155,9 @@ call s:hi("WhichKeyFloat","","#F8EFE4","")
 call s:hi("WhichKeySeparator","#B3A899","","")
 
 
-call s:hi("DashboardHeader","#5C709A","","")
+call s:hi("DashboardHeader","#E57B8C","","")
 
+call s:hi("MasonHeader","","#f1ddf1","")
 " --------------------------------------------------------------------------------------------- >>> -
 
  

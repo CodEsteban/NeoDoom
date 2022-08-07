@@ -8,6 +8,11 @@ M.prompt_new_file = function()
 	vim.cmd(string.format("e %s", file_name))
 end
 
+M.format_and_save = function()
+	vim.lsp.buf.formatting_sync()
+	vim.cmd("w")
+end
+
 M.delete_this_file = function()
 	local file_name = vim.fn.input("Delete this file? (y/n): ", "")
 	if file_name == "y" then
@@ -65,18 +70,19 @@ wk.register({
 		},
 	},
 	["-"] = {
-		mark.add_file, "Mark file" ,
+		mark.add_file, "Mark file",
 	},
 	e = {
 		name = "Editor",
 		r = { "<cmd>so ~/.config/nvim/init.lua<cr>", "Reload config" },
-		["."] = {"<cmd> so % <cr>","Reload this config file"},
-		m = {"<cmd> Mason <cr>", "Manage plugins"},
-		i = {"<cmd> PackerSync <cr>", "Install new packages"}
+		["."] = { "<cmd> so % <cr>", "Reload this config file" },
+		m = { "<cmd> Mason <cr>", "Manage plugins" },
+		i = { "<cmd> PackerSync <cr>", "Install new packages" }
 	},
 	c = {
 		name = "Code",
 		f = { vim.lsp.buf.formatting, "Format code" },
+		t = { "<cmd>ColorizerToggle <cr>", "Toggle Hex Colors" },
 		e = { "<cmd> TroubleToggle<cr>", "Errors" }
 	},
 	f = {
@@ -87,7 +93,8 @@ wk.register({
 		m = { M.move_this_file, "Move this file" },
 		n = { M.prompt_new_file, "New file" },
 		d = { M.delete_this_file, "Delete this file" },
-		s = { "<cmd>w<cr>", "Save file" }
+		s = { M.format_and_save, "Save file" },
+		S = { "<cmd>wa<cr>", "Save All!" }
 	},
 
 	[" "] = { ui.toggle_quick_menu, "Manage marks" },
