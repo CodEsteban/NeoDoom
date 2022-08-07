@@ -27,7 +27,4 @@ db.custom_center = {
       {icon = [[..?  ]],
       desc = 'Find file                      ',
       shortcut = 'SPC f f'},
-      {icon = [[Hah  ]],
-      desc = 'Open config                    ',
-      shortcut = 'SPC f f'},
 }
