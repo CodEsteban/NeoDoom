@@ -41,6 +41,12 @@ return require('packer').startup(function(use)
 		"windwp/nvim-autopairs",
 		config = function() require("nvim-autopairs").setup {} end
 	}
+	use {
+		"AckslD/nvim-neoclip.lua",
+		config = function()
+			require('neoclip').setup()
+		end,
+	}
 	use { 'glepnir/dashboard-nvim' }
 	use { "akinsho/toggleterm.nvim", tag = 'v2.*', config = function()
 		require("toggleterm").setup()

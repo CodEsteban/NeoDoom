@@ -66,8 +66,9 @@ wk.register({
 			j = { "<cmd> sp <cr>", "Down" },
 		},
 		o = {
-			"<cmd>ToggleTerm<cr>", "Open Terminal"
+			"<cmd>ToggleTerm<cr>", "Open terminal"
 		},
+		y = { "<cmd> TroubleToggle<cr>", "Yank manager" }
 	},
 	["-"] = {
 		mark.add_file, "Mark file",
@@ -82,7 +83,7 @@ wk.register({
 	c = {
 		name = "Code",
 		f = { vim.lsp.buf.formatting, "Format code" },
-		t = { "<cmd>ColorizerToggle <cr>", "Toggle Hex Colors" },
+		t = { "<cmd>ColorizerToggle <cr>", "Toggle hex colors" },
 		e = { "<cmd> TroubleToggle<cr>", "Errors" }
 	},
 	f = {
@@ -94,10 +95,10 @@ wk.register({
 		n = { M.prompt_new_file, "New file" },
 		d = { M.delete_this_file, "Delete this file" },
 		s = { M.format_and_save, "Save file" },
-		S = { "<cmd>wa<cr>", "Save All!" }
+		S = { "<cmd>wa<cr>", "Save all!" }
 	},
 
 	[" "] = { ui.toggle_quick_menu, "Manage marks" },
-	["."] = { "<cmd>Telescope file_browser path=%:p:h <cr>", "Find Here" },
+	["."] = { "<cmd>Telescope file_browser path=%:p:h <cr>", "Find here" },
 	[","] = { tlscope.buffers, "Buffer" }
 }, { prefix = "<leader>" })
