@@ -66,7 +66,7 @@ wk.register({
 			j = { "<cmd> sp <cr>", "Down" },
 		},
 		o = {
-			"<cmd>ToggleTerm<cr>", "Open terminal"
+			"<cmd>ToggleTerm dir=%:p:h<cr>", "Open terminal"
 		},
 		y = { "<cmd> TroubleToggle<cr>", "Yank manager" }
 	},
