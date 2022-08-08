@@ -84,7 +84,8 @@ wk.register({
 		name = "Code",
 		f = { vim.lsp.buf.formatting, "Format code" },
 		t = { "<cmd>ColorizerToggle <cr>", "Toggle hex colors" },
-		e = { "<cmd> TroubleToggle<cr>", "Errors" }
+		e = { "<cmd> TroubleToggle<cr>", "Errors" },
+		g = { "<cmd> Telescope live_grep<cr>", "Grep" }
 	},
 	f = {
 		name = "File",

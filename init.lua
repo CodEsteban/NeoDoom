@@ -7,6 +7,8 @@ require('core/keymaps')
 require("gitsigns").setup {
 	signcolumn = false
 }
+
+
 require "colorizer".setup()
 require("mason").setup()
 require("plugins/lsp")
@@ -48,9 +50,54 @@ require("which-key").setup {
 	triggers = "<leader>"
 }
 require('telescope').setup {
+	defaults = {
+		theme = "ivy",
+		layout_config = {
+			height = 0.3
+			-- other layout configuration here
+		},
+		-- other defaults configuration here
+	},
+	pickers = {
+		oldfiles = {
+			theme = "ivy",
+			layout_config = {
+				height = 0.3
+				-- other layout configuration here
+			},
+		},
+		find_files = {
+			theme = "ivy",
+			layout_config = {
+				height = 0.3
+				-- other layout configuration here
+			},
+		},
+		buffers = {
+			theme = "ivy",
+			layout_config = {
+				height = 0.3
+				-- other layout configuration here
+			},
+
+		},
+		live_grep = {
+			theme = "ivy",
+			layout_config = {
+				height = 0.3
+				-- other layout configuration here
+			},
+
+		}
+	},
 	extensions = {
 		file_browser = {
 			hijack_netrw = true,
+			theme = "ivy",
+			layout_config = {
+				height = 0.3
+				-- other layout configuration here
+			},
 		},
 	},
 }
