@@ -27,10 +27,7 @@ vim.o.completeopt = "menuone,noselect,menuone"
 require('core/general')
 require('plugins/which-key')
 require('trouble').setup()
-local tele = require("telescope")
-local fb_actions = tele.extensions.file_browser.actions
-tele.load_extension "file_browser"
-local tele_actions = require "telescope.actions"
+local tele = require("telescope").load_extension "file_browser"
 
 require("which-key").setup {
 
@@ -49,14 +46,38 @@ require("which-key").setup {
 	},
 	triggers = "<leader>"
 }
+require("plugins/lsp")
+require('hardline').setup {
+	bufferline = false, -- enable bufferline
+	bufferline_settings = {
+		exclude_terminal = false, -- don't show terminal buffers in bufferline
+		show_index = false, -- show buffer indexes (not the actual buffer numbers) in bufferline
+	},
+	theme = 'default', -- change theme
+	sections = { -- define sections
+		{ class = 'mode', item = require('hardline.parts.mode').get_item },
+		{ class = 'high', item = require('hardline.parts.git').get_item, hide = 100 },
+		{ class = 'med', item = require('hardline.parts.filename').get_item },
+		'%<',
+		{ class = 'med', item = '%=' },
+		{ class = 'low', item = require('hardline.parts.wordcount').get_item, hide = 100 },
+		{ class = 'error', item = require('hardline.parts.lsp').get_error },
+		{ class = 'warning', item = require('hardline.parts.lsp').get_warning },
+		{ class = 'warning', item = require('hardline.parts.whitespace').get_item },
+		{ class = 'high', item = require('hardline.parts.filetype').get_item, hide = 60 },
+		{ class = 'mode', item = require('hardline.parts.line').get_item },
+	},
+}
 require('telescope').setup {
-	defaults = {
-		theme = "ivy",
-		layout_config = {
-			height = 0.3
-			-- other layout configuration here
+	extensions = {
+		file_browser = {
+			hijack_netrw = true,
+			theme = "ivy",
+			layout_config = {
+				height = 0.3
+				-- other layout configuration here
+			},
 		},
-		-- other defaults configuration here
 	},
 	pickers = {
 		oldfiles = {
@@ -90,36 +111,5 @@ require('telescope').setup {
 
 		}
 	},
-	extensions = {
-		file_browser = {
-			hijack_netrw = true,
-			theme = "ivy",
-			layout_config = {
-				height = 0.3
-				-- other layout configuration here
-			},
-		},
-	},
 }
-require("plugins/lsp")
-require('hardline').setup {
-	bufferline = false, -- enable bufferline
-	bufferline_settings = {
-		exclude_terminal = false, -- don't show terminal buffers in bufferline
-		show_index = false, -- show buffer indexes (not the actual buffer numbers) in bufferline
-	},
-	theme = 'default', -- change theme
-	sections = { -- define sections
-		{ class = 'mode', item = require('hardline.parts.mode').get_item },
-		{ class = 'high', item = require('hardline.parts.git').get_item, hide = 100 },
-		{ class = 'med', item = require('hardline.parts.filename').get_item },
-		'%<',
-		{ class = 'med', item = '%=' },
-		{ class = 'low', item = require('hardline.parts.wordcount').get_item, hide = 100 },
-		{ class = 'error', item = require('hardline.parts.lsp').get_error },
-		{ class = 'warning', item = require('hardline.parts.lsp').get_warning },
-		{ class = 'warning', item = require('hardline.parts.whitespace').get_item },
-		{ class = 'high', item = require('hardline.parts.filetype').get_item, hide = 60 },
-		{ class = 'mode', item = require('hardline.parts.line').get_item },
-	},
-}
+require("telescope").load_extension "file_browser"
