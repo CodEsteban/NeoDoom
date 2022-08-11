@@ -27,8 +27,6 @@ vim.o.completeopt = "menuone,noselect,menuone"
 require('core/general')
 require('plugins/which-key')
 require('trouble').setup()
-local tele = require("telescope").load_extension "file_browser"
-
 require("which-key").setup {
 
 	key_labels = {
@@ -113,3 +111,5 @@ require('telescope').setup {
 	},
 }
 require("telescope").load_extension "file_browser"
+require 'marks'.setup {
+}

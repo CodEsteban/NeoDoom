@@ -25,6 +25,9 @@ return require('packer').startup(function(use)
 	use {
 		'lewis6991/gitsigns.nvim',
 	}
+	use {
+		'chentoast/marks.nvim',
+	}
 	use { 'ojroques/nvim-hardline' }
 	use { 'feline-nvim/feline.nvim' }
 	use { "williamboman/mason.nvim" }

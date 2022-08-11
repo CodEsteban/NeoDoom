@@ -19,6 +19,18 @@ M.delete_this_file = function()
 		vim.cmd("!rm %")
 	end
 end
+M.resize_window_vertical = function()
+	local size = vim.fn.input("Size vertical: ", "")
+	if isBlank(size) then
+		vim.cmd(string.format("vertical resize %s", size))
+	end
+end
+M.resize_window_horizontal = function()
+	local size = vim.fn.input("Size horizontal: ", "")
+	if isBlank(size) then
+		vim.cmd(string.format("res %s", size))
+	end
+end
 function isBlank(x)
 	return not tostring(x):find("^%s*$")
 end
@@ -57,6 +69,8 @@ wk.register({
 		k = { "<cmd> wincmd k<cr>", "which_key_ignore" },
 		l = { "<cmd> wincmd l<cr>", "which_key_ignore" },
 		H = { "<cmd> wincmd H<cr>", "which_key_ignore" },
+		r = { name = "Resize window", v = { M.resize_window_horizontal, "Vertical" },
+			h = { M.resize_window_vertical, "Horizontal" }, r = { "<cmd>res<cr>", "Reset" } },
 		J = { "<cmd> wincmd J<cr>", "which_key_ignore" },
 		K = { "<cmd> wincmd K<cr>", "which_key_ignore" },
 		L = { "<cmd> wincmd L<cr>", "which_key_ignore" },
@@ -87,6 +101,13 @@ wk.register({
 		e = { "<cmd> TroubleToggle<cr>", "Errors" },
 		g = { "<cmd> Telescope live_grep<cr>", "Grep" }
 	},
+	m = {
+		name = "Code",
+		f = { vim.lsp.buf.formatting, "Format code" },
+		t = { "<cmd>ColorizerToggle <cr>", "Toggle hex colors" },
+		e = { "<cmd> TroubleToggle<cr>", "Errors" },
+		g = { "<cmd> Telescope live_grep<cr>", "Grep" }
+	},
 	f = {
 		name = "File",
 
@@ -99,7 +120,7 @@ wk.register({
 		S = { "<cmd>wa<cr>", "Save all!" }
 	},
 
-	[" "] = { ui.toggle_quick_menu, "Manage marks" },
+	[" "] = { ui.toggle_quick_menu, "Manage file marks" },
 	["."] = { "<cmd>Telescope file_browser path=%:p:h <cr>", "Find here" },
 	[","] = { tlscope.buffers, "Buffer" }
 }, { prefix = "<leader>" })
