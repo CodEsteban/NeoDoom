@@ -9,8 +9,11 @@ M.prompt_new_file = function()
 end
 
 M.format_and_save = function()
-	vim.lsp.buf.formatting_sync()
-	vim.cmd("w")
+	local modified = vim.api.nvim_eval("&modified")
+	if modified == 1 then
+		vim.lsp.buf.formatting_sync()
+	end
+	vim.cmd("up")
 end
 
 M.delete_this_file = function()
@@ -110,7 +113,6 @@ wk.register({
 	},
 	f = {
 		name = "File",
-
 		f = { "<cmd>Telescope find_files<cr>", "Find file" },
 		r = { "<cmd>Telescope oldfiles<cr>", "Open recent file" },
 		m = { M.move_this_file, "Move this file" },

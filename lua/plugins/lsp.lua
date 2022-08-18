@@ -40,3 +40,9 @@ require('lspconfig')['rust_analyzer'].setup {
 require('lspconfig')['sumneko_lua'].setup {
 	capabilities = capabilities
 }
+require('lspconfig')['pyright'].setup {
+	capabilities = capabilities
+}
+require('lspconfig')['dartls'].setup {
+	capabilities = capabilities
+}

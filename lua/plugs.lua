@@ -32,9 +32,6 @@ return require('packer').startup(function(use)
 	use { 'feline-nvim/feline.nvim' }
 	use { "williamboman/mason.nvim" }
 	use { 'nvim-treesitter/nvim-treesitter' }
-	use { 'dinhhuy258/vim-local-history',
-		config = function() require("nvim-autopairs").setup {} end
-	}
 	use { 'norcalli/nvim-colorizer.lua',
 	}
 	use {
